@@ -51,7 +51,7 @@ php artisan key:generate
 docker-compose up -d
 ```
 
-The API should now be running on http://localhost:8000.
+The API should now be running on http://localhost.
 
 ### 5. Run Migrations
 
