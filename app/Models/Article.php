@@ -26,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @property-read \App\Models\Category|null $category
  * @property-read \App\Models\Source $source
  *
+ * @method static \Database\Factories\ArticleFactory factory($count = null, $state = [])
  * @method static Builder<static>|Article newModelQuery()
  * @method static Builder<static>|Article newQuery()
  * @method static Builder<static>|Article query()

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\Sources\GetSourcesPaginate;
+use App\Actions\Sources\GetSourcesPaginate;
 use App\Http\Requests\SourceSearchRequest;
 use App\Http\Resources\SourceResource;
 use App\Models\Source;

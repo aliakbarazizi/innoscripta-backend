@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\Categories\GetCategoriesPaginate;
+use App\Actions\Categories\GetCategoriesPaginate;
 use App\Http\Requests\CategorySearchRequest;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;

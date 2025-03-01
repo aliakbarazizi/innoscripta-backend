@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Actions\Categories;
+namespace App\Actions\Sources;
 
-use App\Models\Category;
+use App\Models\Source;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class GetCategoriesPaginate
+class GetSourcesPaginate
 {
     /**
-     * @return LengthAwarePaginator<Category>
+     * @return LengthAwarePaginator<Source>
      */
     public function handle(?string $query = null): LengthAwarePaginator
     {
-        return Category::query()
+        return Source::query()
             ->when($query, function ($query, $q) {
                 $query->where('name', 'like', "$q%");
             })

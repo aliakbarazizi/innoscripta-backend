@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Actions\Sources;
+namespace App\Actions\Authors;
 
-use App\Models\Source;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\Author;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
-class GetSourcesPaginate
+class GetAuthorsPaginate
 {
     /**
-     * @return LengthAwarePaginator<Source>
+     * @return LengthAwarePaginator<Author>
      */
     public function handle(?string $query = null): LengthAwarePaginator
     {
-        return Source::query()
+        return Author::query()
             ->when($query, function ($query, $q) {
                 $query->where('name', 'like', "$q%");
             })

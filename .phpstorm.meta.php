@@ -1621,9 +1621,8 @@ namespace PHPSTORM_META {
 'signed','throttle','verified',);
         registerArgumentsSet('routes', 
 'sanctum.csrf-cookie','register','login','logout','users.me',
-'articles.feed','categories.index','categories.show','authors.index','authors.show',
-'sources.index','sources.show','articles.index','articles.show',
-'storage.local',);
+'articles.feed','preferences.update','categories.index','categories.show','authors.index',
+'authors.show','sources.index','sources.show','articles.index','articles.show','storage.local',);
         registerArgumentsSet('views', 
 'laravel-exceptions-renderer::components.card','laravel-exceptions-renderer::components.context','laravel-exceptions-renderer::components.editor','laravel-exceptions-renderer::components.header','laravel-exceptions-renderer::components.icons.chevron-down',
 'laravel-exceptions-renderer::components.icons.chevron-up','laravel-exceptions-renderer::components.icons.computer-desktop','laravel-exceptions-renderer::components.icons.moon','laravel-exceptions-renderer::components.icons.sun','laravel-exceptions-renderer::components.layout',
@@ -1672,8 +1671,8 @@ namespace PHPSTORM_META {
 'MEMCACHED_HOST','REDIS_CLIENT','REDIS_HOST','REDIS_PASSWORD','REDIS_PORT',
 'MAIL_MAILER','MAIL_SCHEME','MAIL_HOST','MAIL_PORT','MAIL_USERNAME',
 'MAIL_PASSWORD','MAIL_FROM_ADDRESS','MAIL_FROM_NAME','AWS_ACCESS_KEY_ID','AWS_SECRET_ACCESS_KEY',
-'AWS_DEFAULT_REGION','AWS_BUCKET','AWS_USE_PATH_STYLE_ENDPOINT','FORWARD_DB_PORT','NYTIMES_API_KEY',
-'THE_GUARDIAN_API_KEY','NEWSAPI_ORG_API_KEY',);
+'AWS_DEFAULT_REGION','AWS_BUCKET','AWS_USE_PATH_STYLE_ENDPOINT','FORWARD_DB_PORT','WWWUSER',
+'WWWGROUP','NYTIMES_API_KEY','THE_GUARDIAN_API_KEY','NEWSAPI_ORG_API_KEY',);
         
                 expectedArguments(\Illuminate\Support\Facades\Gate::has(), 0, argumentsSet('auth'));
     expectedArguments(\Illuminate\Support\Facades\Gate::allows(), 0, argumentsSet('auth'));

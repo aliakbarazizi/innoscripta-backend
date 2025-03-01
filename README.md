@@ -1,6 +1,6 @@
 # Backend Service
 
-This is the backend service for the project, built with Laravel. The application is containerized using Docker and can be run using docker-compose.
+This is the backend service for the project, built with Laravel. The application is containerized using Docker and can be run using docker compose.
 
 ## Prerequisites
 
@@ -40,10 +40,16 @@ SANCTUM_STATEFUL_DOMAINS=localhost  # Change if frontend URL is different
 ### 3. Build and Run the Application
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 The API should now be running on http://localhost.
+
+Then install composer dependencies:
+
+```bash
+docker compose exec -it laravel.test composer install
+```
 
 ### 4. Generate Application Key
 
@@ -59,4 +65,12 @@ Run the following command to migrate the database:
 
 ```bash
 docker compose exec -it laravel.test php artisan migrate
+```
+
+### 6. Manually fetch data from the news sources
+
+Run the following command to fetch data from the news sources:
+
+```bash
+docker compose exec -it laravel.test php artisan app:fetch-news-from-data-sources --sync=1
 ```

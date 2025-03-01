@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\Authors\GetAuthorsPaginate;
+use App\Actions\Authors\GetAuthorsPaginate;
 use App\Http\Requests\AuthorSearchRequest;
 use App\Http\Resources\AuthorResource;
 use App\Models\Author;

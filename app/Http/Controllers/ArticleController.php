@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\Articles\GetArticlesPaginate;
-use App\Http\Actions\Articles\GetUserFeedArticlesPaginate;
+use App\Actions\Articles\GetArticlesPaginate;
+use App\Actions\Articles\GetUserFeedArticlesPaginate;
 use App\Http\Requests\ArticleSearchRequest;
 use App\Http\Resources\ArticleResource;
 use App\Models\Article;

@@ -17,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Article> $articles
  * @property-read int|null $articles_count
  *
+ * @method static \Database\Factories\AuthorFactory factory($count = null, $state = [])
  * @method static Builder<static>|Author newModelQuery()
  * @method static Builder<static>|Author newQuery()
  * @method static Builder<static>|Author query()

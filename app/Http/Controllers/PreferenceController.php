@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\Users\UpdateUserPreference;
+use App\Actions\Users\UpdateUserPreference;
 use App\Http\Requests\UpdateUserPreferencesRequest;
 use App\Models\User;
 use Auth;

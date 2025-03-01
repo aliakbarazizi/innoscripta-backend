@@ -1,43 +1,43 @@
 <?php
 
 use App\Models\User;
-
-uses(\Illuminate\Foundation\Testing\RefreshDatabase::class);
-
-test('login screen can be rendered', function () {
-    $response = $this->get('/login');
-
-    $response->assertStatus(200);
-});
+use Tests\TestCase;
 
 test('users can authenticate using the login screen', function () {
-    $user = User::factory()->create();
-
-    $response = $this->post('/login', [
-        'email' => $user->email,
-        'password' => 'password',
+    /** @var TestCase $this */
+    $user = User::factory()->create([
+        'password' => Hash::make('password'),
     ]);
 
+    $this
+        ->postJson('/api/login', [
+            'email' => $user->email,
+            'password' => 'password',
+        ]);
+
     $this->assertAuthenticated();
-    $response->assertRedirect(route('dashboard', absolute: false));
 });
 
 test('users can not authenticate with invalid password', function () {
+    /** @var TestCase $this */
     $user = User::factory()->create();
 
-    $this->post('/login', [
-        'email' => $user->email,
-        'password' => 'wrong-password',
-    ]);
+    $this
+        ->postJson('/api/login', [
+            'email' => $user->email,
+            'password' => 'wrong-password',
+        ])
+        ->assertStatus(422)
+        ->assertJsonValidationErrors('email');
 
     $this->assertGuest();
 });
 
 test('users can logout', function () {
+    /** @var TestCase $this */
     $user = User::factory()->create();
 
-    $response = $this->actingAs($user)->post('/logout');
+    $this->actingAs($user)->post('/api/logout');
 
     $this->assertGuest();
-    $response->assertRedirect('/');
 });
