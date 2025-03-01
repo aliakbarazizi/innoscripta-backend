@@ -19,7 +19,7 @@ cd backend
 
 Copy the example environment file and update it as needed:
 
-cp .env.example .env
+`cp .env.example .env`
 
 Add the following environment variables with your API keys:
 
@@ -37,21 +37,21 @@ FRONTEND_URL=http://localhost:3000  # Change if frontend URL is different
 SANCTUM_STATEFUL_DOMAINS=localhost  # Change if frontend URL is different
 ```
 
-### 3. Generate Application Key
-
-Run the following command to generate an application key:
-
-```bash
-php artisan key:generate
-```
-
-### 4. Build and Run the Application
+### 3. Build and Run the Application
 
 ```bash
 docker-compose up -d
 ```
 
 The API should now be running on http://localhost.
+
+### 4. Generate Application Key
+
+Run the following command to generate an application key:
+
+```bash
+docker compose exec -it laravel.test php artisan key:generate
+```
 
 ### 5. Run Migrations
 
