@@ -12,8 +12,8 @@ class UpdateUserPreference
         ?array $categories = null,
         ?array $authors = null
     ): void {
-        $user->preferredSources()->sync($sources);
-        $user->preferredCategories()->sync($categories);
-        $user->preferredAuthors()->sync($authors);
+        $user->preferredSources()->sync($sources ?? []);
+        $user->preferredCategories()->sync($categories ?? []);
+        $user->preferredAuthors()->sync($authors ?? []);
     }
 }
