@@ -1,0 +1,19 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - phpstan-baseline.neon
+parameters:
+    level: 8
+    paths:
+        - app/
+        - bootstrap/
+        - config/
+        - database/
+        - public/
+        - routes/
+    checkUninitializedProperties: false
+    polluteScopeWithLoopInitialAssignments: true
+    ignoreErrors:
+        -
+            identifier: missingType.generics
+        -
+            identifier: missingType.iterableValue
