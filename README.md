@@ -10,8 +10,10 @@ This is the backend service for the project, built with Laravel. The application
 
 ### 1. Clone the Repository
 
-git clone <your-repo-url>  
+```bash
+git clone https://github.com/aliakbarazizi/innoscripta-backend backend
 cd backend
+```
 
 ### 2. Create an .env File
 
@@ -39,13 +41,15 @@ SANCTUM_STATEFUL_DOMAINS=localhost  # Change if frontend URL is different
 
 Run the following command to generate an application key:
 
-`
+```bash
 php artisan key:generate
-`
+```
 
 ### 4. Build and Run the Application
 
-`docker-compose up -d`
+```bash
+docker-compose up -d
+```
 
 The API should now be running on http://localhost:8000.
 
@@ -53,4 +57,6 @@ The API should now be running on http://localhost:8000.
 
 Run the following command to migrate the database:
 
-`docker compose exec -it laravel.test php artisan migrate`
+```bash
+docker compose exec -it laravel.test php artisan migrate
+```
